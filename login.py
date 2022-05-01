@@ -9,10 +9,10 @@ from driver import get_driver
 
 
 def get_user_details():
-    _username = os.environ.get("USERNAME")
+    _username = os.environ.get("EMAIL")
     _password = os.environ.get("PASSWORD")
     if _username is None:
-        raise Exception("Username is required")
+        raise Exception("Email id is required")
     if _password is None:
         raise Exception("Password is required")
     return _username, _password
@@ -51,4 +51,3 @@ print("Account details in dict format\n", account_details)
 print("Account details in json format\n", json.dumps(account_details, indent=4))
 
 driver.quit()
-sleep()
